@@ -36,6 +36,10 @@ class WorkoutHistoriesTable extends Migration
 				'constraint'     => 255,
 				'null'			 => true
 			],
+			'started_at' => [
+				'type'           => 'DATETIME',
+				'null'			 => true
+			],
 			'finished_at' => [
 				'type'           => 'DATETIME',
 				'null'			 => true

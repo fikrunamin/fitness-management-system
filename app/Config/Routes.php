@@ -32,7 +32,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/workout', 'Workout::index');
+$routes->get('/workouts', 'Workout::index');
+$routes->match(['post', 'get'], '/workouts/search', 'Workout::search');
+$routes->get('/workouts/(:segment)', 'Workout::index/$1');
+$routes->get('/workouts/(:segment)/start', 'Workout::start/$1');
+$routes->get('/workouts/(:segment)/finish', 'Workout::finish/$1');
 
 /**
  * --------------------------------------------------------------------

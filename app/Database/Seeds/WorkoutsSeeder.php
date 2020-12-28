@@ -2,12 +2,23 @@
 
 namespace App\Database\Seeds;
 
+use CodeIgniter\I18n\Time;
+
 class WorkoutsSeeder extends \CodeIgniter\Database\Seeder
 {
     public function run()
     {
-        $workouts = ['Push Up', 'Sit Up', 'Squat Jump'];
 
+        $data = [
+            'name' => 'general',
+            'created_at' => new Time('now'),
+            'updated_at' => new Time('now'),
+        ];
+
+        $this->db->table('workout_categories')->insert($data);
+
+
+        $workouts = ['Push Up', 'Sit Up', 'Squat Jump'];
 
         for ($i = 0; $i < count($workouts); $i++) {
             $data = [
@@ -21,6 +32,11 @@ class WorkoutsSeeder extends \CodeIgniter\Database\Seeder
             ];
 
             $this->db->table('workouts')->insert($data);
+
+            $this->db->table('workout_has_categories')->insert([
+                'id_workout' => $i + 1,
+                'id_workout_category' => 1
+            ]);
         }
 
         $steps = [

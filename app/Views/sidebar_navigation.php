@@ -14,37 +14,54 @@
     <div class="col p-5">
         <h2 class="font-semibold">Main Menu</h2>
         <div class="grid grid-cols-1 gap-y-3 mt-5">
-            <div class="relative col font-semibold bg-blue-100 text-blue-500 rounded-lg h-14 px-5 flex items-center">
+            <div class="relative col font-semibold rounded-lg h-14 px-5 flex items-center
+                <?php if (service('uri')->getSegment(1) == '') : ?>
+                    bg-blue-100 text-blue-500 
+                <?php else : ?>
+                    hover:bg-blue-100 hover:text-blue-500 text-gray-700 
+                <?php endif; ?>
+                    ">
                 <a href="/" class="w-full h-full flex items-center">
                     Home
                 </a>
-                <div class="bg-blue-500 absolute -right-5 w-1.5 h-full rounded-l-lg">
-                </div>
+                <?php if (service('uri')->getSegment(1) == '') : ?>
+                    <div class="bg-blue-500 absolute -right-5 w-1.5 h-full rounded-l-lg">
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="col">
                 <div class="grid grid-cols-1 gap-y-3">
-                    <div class="font-semibold col rounded-lg h-14 px-5 flex items-center text-gray-700 cursor-pointer" onclick="open_submenu(this)">
-                        <h2 class="w-full">List of Workouts</h2>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-blue-500 w-6 h-6">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="col ml-5 px-5 py-5 bg-blue-100 text-black text-opacity-70 rounded-lg submenu hidden">
-                        <div class="grid grid-cols-1 gap-y-2">
-                            <div class="col rounded-lg h-10 hover:bg-blue-500 hover:text-blue-100 px-5 flex items-center">
-                                Full Body
+                    <div class="relative font-semibold col rounded-lg h-14 px-5 flex items-center
+                        <?php if (service('uri')->getSegment(1) == 'workouts') : ?>
+                            bg-blue-100 text-blue-500 
+                        <?php else : ?>
+                            hover:bg-blue-100 hover:text-blue-500 text-gray-700 
+                        <?php endif; ?>
+                        ">
+                        <a href="/workouts" class="w-full h-full flex items-center">
+                            Workouts
+                        </a>
+                        <?php if (service('uri')->getSegment(1) == 'workouts') : ?>
+                            <div class="bg-blue-500 absolute -right-5 w-1.5 h-full rounded-l-lg">
                             </div>
-                            <div class="col rounded-lg h-10 hover:bg-blue-500 hover:text-blue-100 px-5 flex items-center">
-                                Upper Body
-                            </div>
-                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
-            <div class="relative col font-semibold hover:bg-blue-100 text-gray-700 hover:text-blue-500 rounded-lg h-14 px-5 flex items-center">
-                List of Healthy Foods
-                <div class="bg-white absolute -right-5 w-1.5 h-full rounded-l-lg">
-                </div>
+            <div class="relative col font-semibold rounded-lg h-14 px-5 flex items-center
+                <?php if (service('uri')->getSegment(1) == 'healthy-foods') : ?>
+                    bg-blue-100 text-blue-500 
+                <?php else : ?>
+                    hover:bg-blue-100 hover:text-blue-500 text-gray-700 
+                <?php endif; ?>
+            ">
+                <a href="/healthy-foods" class="w-full h-full flex items-center">
+                    Healthy Foods
+                </a>
+                <?php if (service('uri')->getSegment(1) == 'healthy-foods') : ?>
+                    <div class="bg-blue-500 absolute -right-5 w-1.5 h-full rounded-l-lg">
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -52,7 +69,7 @@
         <h2 class="font-semibold">Other Menu</h2>
         <div class="grid grid-cols-1 gap-y-3 mt-5">
             <div class="font-semibold col rounded-lg h-14 px-5 flex items-center text-gray-700 cursor-pointer" onclick="open_submenu(this)">
-                <h2 class="w-full">Profile</h2>
+                <h2 class="w-full">My Profile</h2>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-blue-500 w-6 h-6">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
@@ -60,7 +77,7 @@
             <div class="col ml-5 px-5 py-5 bg-blue-100 text-black text-opacity-70 rounded-lg submenu hidden">
                 <div class="grid grid-cols-1 gap-y-2">
                     <div class="col rounded-lg h-10 hover:bg-blue-500 hover:text-blue-100 px-5 flex items-center">
-                        Edit Profile
+                        Edit My Profile
                     </div>
                     <div class="col rounded-lg h-10 hover:bg-blue-500 hover:text-blue-100 px-5 flex items-center">
                         Logout

@@ -62,7 +62,7 @@
 						</div>
 						<div class="col flex justify-start items-center mt-5">
 
-							<a href="/workout" class="w-full bg-blue-500 text-white font-semibold text-lg rounded-lg h-14 flex justify-center items-center">
+							<a href="/workouts/push-up" class="w-full bg-blue-500 text-white font-semibold text-lg rounded-lg h-14 flex justify-center items-center">
 								Start Push Up
 							</a>
 						</div>
@@ -140,7 +140,7 @@
 		</div>
 		<div class="col bg-white shadow-md rounded-lg p-5">
 			<div>
-				<h1 class="text-md font-semibold">Drink Water Progress</h1>
+				<h1 class="text-md font-semibold">Daily Drink Water Progress</h1>
 			</div>
 			<div class="w-full py-6">
 				<div class="flex">
@@ -153,33 +153,63 @@
 							</div>
 						</div>
 
-						<div class="text-xs text-center md:text-base">200ml</div>
+						<div class="text-xs text-center md:text-base"><span class="left-amount">0</span>ml</div>
 					</div>
 
 					<div class="w-1/2">
 						<div class="relative mb-2">
 							<div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
 								<div class="w-full bg-gray-200 rounded items-center align-middle align-center flex-1">
-									<div class="w-0 bg-blue-300 py-1 rounded w-full"></div>
+									<div class="w-0 bg-blue-300 py-1 rounded drink-progress"></div>
 								</div>
 							</div>
 
-							<div class="w-10 h-10 mx-auto bg-white border-2 border-gray-200 rounded-full text-lg text-white flex items-center">
-								<span class="material-icons text-center text-gray-600 w-full">
+							<div class="w-10 h-10 mx-auto bg-white border-2 border-gray-200 rounded-full text-gray-600 text-lg flex items-center drink-target">
+								<span class="material-icons text-center w-full">
 									opacity
 								</span>
 							</div>
 						</div>
 
-						<div class="text-xs text-center md:text-base">400ml</div>
+						<div class="text-xs text-center md:text-base"><span class="right-amount">200</span>ml</div>
 					</div>
 				</div>
 			</div>
 			<div>
 				<p class="text-sm text-black text-opacity-50 leading-relaxed">You need to drink <span class="font-semibold text-blue-500 text-opacity-100">2 Litres of water </span>per day!</p>
-				<button class="focus:outline-none w-full bg-blue-500 text-white rounded-lg font-semibold mt-5 p-3">Okay, Done 200ml</button>
+				<button class="focus:outline-none w-full bg-blue-500 text-white rounded-lg font-semibold mt-5 p-3" onclick="drink()">Done 200ml</button>
 			</div>
 		</div>
 	</div>
 </div>
+<?= $this->endSection(); ?>
+
+<?= $this->section('scripts'); ?>
+<script>
+	function drink() {
+		$('.drink-progress').addClass('w-full', {
+			duration: 500,
+			easing: 'linear',
+			complete: function() {
+				$('.drink-progress').removeClass('w-0')
+				$('.drink-target').removeClass('bg-white border-2 border-gray-200 text-gray-600')
+				$('.drink-target').addClass('bg-blue-500 text-white', 200)
+
+				setTimeout(() => {
+					$('.drink-progress').removeClass('w-full')
+					$('.drink-progress').addClass('w-0', 300)
+					$('.drink-target').addClass('bg-white border-2 border-gray-200 text-gray-600')
+					$('.drink-target').removeClass('bg-blue-500 text-white', 300)
+
+
+					let left_amount = $('.left-amount').html()
+					$('.left-amount').html(parseInt(left_amount) + 200)
+
+					let right_amount = $('.right-amount').html()
+					$('.right-amount').html(parseInt(right_amount) + 200)
+				}, 1000);
+			}
+		})
+	}
+</script>
 <?= $this->endSection(); ?>

@@ -24,11 +24,11 @@
 <body>
     <div class="h-screen mx-auto">
         <div class="grid grid-cols-12">
-            <div class="col-span-3 bg-gray-50 h-screen max-h-screen overflow-y-auto pt-16" id="sidebar">
+            <div class="col-span-2 bg-gray-50 h-screen max-h-screen overflow-y-auto pt-16" id="sidebar">
                 <!-- Sidebar Navigation -->
                 <?= $this->include('sidebar_navigation'); ?>
             </div>
-            <div class="col-span-9 bg-blue-50 h-screen max-h-screen overflow-y-auto px-10" id="main-content">
+            <div class="col-span-10 bg-blue-50 h-screen max-h-screen overflow-y-auto px-10" id="main-content">
                 <!-- Content -->
                 <div class="relative grid grid-cols-3 xl:grid-cols-4 py-16 gap-5">
 
