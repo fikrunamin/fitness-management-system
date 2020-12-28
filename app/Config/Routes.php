@@ -32,12 +32,14 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/workouts', 'Workout::index');
-$routes->match(['post', 'get'], '/workouts/search', 'Workout::search');
-$routes->match(['post', 'get'], '/workouts/add', 'Workout::add');
-$routes->get('/workouts/(:segment)', 'Workout::index/$1');
-$routes->get('/workouts/(:segment)/start', 'Workout::start/$1');
-$routes->get('/workouts/(:segment)/finish', 'Workout::finish/$1');
+$routes->group('workouts', ['filter' => 'auth'], function ($routes) {
+	$routes->get('', 'Workout::index');
+	$routes->match(['post', 'get'], '/search', 'Workout::search');
+	$routes->match(['post', 'get'], '/add', 'Workout::add');
+	$routes->get('/(:segment)', 'Workout::index/$1');
+	$routes->get('/(:segment)/start', 'Workout::start/$1');
+	$routes->get('/(:segment)/finish', 'Workout::finish/$1');
+});
 
 $routes->group('auth', ['filter' => 'guest'], function ($routes) {
 	$routes->match(['get', 'post'], 'register', 'Auth::register', ['as' => 'register']);
