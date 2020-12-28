@@ -21,16 +21,9 @@ class InstructorsTable extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => 255,
 			],
-			'occupation' => [
-				'type'           => 'VARCHAR',
-				'constraint'     => 255,
-			],
 			'gender' => [
 				'type'           => 'VARCHAR',
 				'constraint'     => 10,
-			],
-			'birthdate' => [
-				'type'           => 'DATE',
 			],
 			'created_at' => [
 				'type'           => 'DATETIME',

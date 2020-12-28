@@ -25,7 +25,7 @@
                             </div>
                             <div class="w-full max-h-96 overflow-y-auto pr-3" id="instructions">
                                 <div class="text-sm bg-blue-100 rounded-lg p-5">
-                                    <p class="leading-relaxed text-black">Hi, <span class="font-semibold">Muhammad Fikrun Amin</span>.</p>
+                                    <p class="leading-relaxed text-black">Hi, <span class="font-semibold"><?= ucwords(session()->get('data_user')['fullname']); ?></span>.</p>
                                 </div>
                                 <?php foreach ($datas as $index => $data) : ?>
                                     <?php if ($data == $datas[0]) : ?>

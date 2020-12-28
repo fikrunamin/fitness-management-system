@@ -79,6 +79,17 @@ class Workout extends BaseController
         return view('workouts/finish', $data);
     }
 
+    public function add(){
+        if($this->request->getMethod() == 'post'){
+
+        }
+        $data = [
+            'title' => 'Add a New Workout'
+        ];
+
+        return view('workouts/add', $data);
+    }
+
     //--------------------------------------------------------------------
 
 }

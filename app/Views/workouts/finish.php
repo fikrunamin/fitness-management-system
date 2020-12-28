@@ -28,54 +28,14 @@
                             </div>
                             <div class="w-full max-h-96 overflow-y-auto pr-3" id="instructions">
                                 <div class="text-sm bg-blue-100 rounded-lg p-5">
-                                    <p class="leading-relaxed text-black">Hi, <span class="font-semibold">Muhammad Fikrun Amin</span>.</p>
+                                    <p class="leading-relaxed text-black">Hi, <span class="font-semibold"><?= ucwords(session()->get('data_user')['fullname']); ?></span>.</p>
                                 </div>
                                 <div class="text-sm bg-blue-100 rounded-lg step-instruction overflow-hidden mt-3 box-border">
                                     <div class="p-5">
-                                        <p class="leading-relaxed text-black">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim.</p>
+                                        <p class="leading-relaxed text-black">Some instructuins go here.</p>
                                         <div class="w-full mt-5">
-                                            <button onclick="next_step()" class="w-full bg-blue-500 text-white font-semibold text-md rounded-lg h-10 flex justify-center items-center">
-                                                Next Step
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-sm bg-blue-100 rounded-lg step-instruction overflow-hidden h-0 hidden mt-3 box-border">
-                                    <div class="p-5">
-                                        <p class="leading-relaxed text-black">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim.</p>
-                                        <div class="w-full mt-5">
-                                            <button onclick="next_step()" class="w-full bg-blue-500 text-white font-semibold text-md rounded-lg h-10 flex justify-center items-center">
-                                                Next Step
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-sm bg-blue-100 rounded-lg step-instruction overflow-hidden h-0 hidden mt-3 box-border">
-                                    <div class="p-5">
-                                        <p class="leading-relaxed text-black">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim.</p>
-                                        <div class="w-full mt-5">
-                                            <button onclick="next_step()" class="w-full bg-blue-500 text-white font-semibold text-md rounded-lg h-10 flex justify-center items-center">
-                                                Next Step
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-sm bg-blue-100 rounded-lg step-instruction overflow-hidden h-0 hidden mt-3 box-border">
-                                    <div class="p-5">
-                                        <p class="leading-relaxed text-black">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim.</p>
-                                        <div class="w-full mt-5">
-                                            <button onclick="next_step()" class="w-full bg-blue-500 text-white font-semibold text-md rounded-lg h-10 flex justify-center items-center">
-                                                Next Step
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-sm bg-blue-100 rounded-lg step-instruction overflow-hidden h-0 hidden mt-3 box-border">
-                                    <div class="p-5">
-                                        <p class="leading-relaxed text-black">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim.</p>
-                                        <div class="w-full mt-5">
-                                            <button onclick="finish_step()" class="w-full bg-blue-500 text-white font-semibold text-md rounded-lg h-10 flex justify-center items-center finish-button">
-                                                Finish Workout
+                                            <button class="w-full bg-blue-500 text-white font-semibold text-md rounded-lg h-10 flex justify-center items-center">
+                                                Finish
                                             </button>
                                         </div>
                                     </div>

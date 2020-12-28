@@ -70,7 +70,7 @@
             <img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Wayfarers&hairColor=Red&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Heather&eyeType=Close&eyebrowType=Default&mouthType=Default&skinColor=Brown' class="w-14 h-14 object-cover rounded-full mr-5" />
             <div class="w-full">
                 <div class="text-sm bg-blue-100 rounded-lg p-5">
-                    <p class="leading-relaxed text-black">Hi, <span class="font-semibold">Muhammad Fikrun Amin</span>.</p>
+                    <p class="leading-relaxed text-black">Hi, <span class="font-semibold"><?= ucwords(session()->get('data_user')['fullname']); ?></span>.</p>
                 </div>
                 <div class="text-sm bg-blue-100 rounded-lg p-5 mt-3">
                     <p class="leading-relaxed text-black">I'm <span class="font-semibold">Muhammad Harraz bin Harun</span>. So, today I will be your instructor for this workout. Please follow the instructions carefully.</p>

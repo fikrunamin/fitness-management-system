@@ -34,9 +34,16 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/workouts', 'Workout::index');
 $routes->match(['post', 'get'], '/workouts/search', 'Workout::search');
+$routes->match(['post', 'get'], '/workouts/add', 'Workout::add');
 $routes->get('/workouts/(:segment)', 'Workout::index/$1');
 $routes->get('/workouts/(:segment)/start', 'Workout::start/$1');
 $routes->get('/workouts/(:segment)/finish', 'Workout::finish/$1');
+
+$routes->group('auth', ['filter' => 'guest'], function ($routes) {
+	$routes->match(['get', 'post'], 'register', 'Auth::register', ['as' => 'register']);
+	$routes->match(['get', 'post'], 'login', 'Auth::login', ['as' => 'login']);
+	$routes->match(['get', 'post'], 'guest', 'Auth::guest', ['as' => 'guest']);
+});
 
 /**
  * --------------------------------------------------------------------

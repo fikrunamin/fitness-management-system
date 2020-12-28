@@ -19,7 +19,7 @@
 			</button>
 		</div>
 		<div class="w-10 h-10 text-blue-50 rounded-lg bg-blue-500 flex items-center justify-center">
-			<a href="#" class="flex items-center justify-center">
+			<a href="/auth/logout" class="flex items-center justify-center">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-white">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
 				</svg>
@@ -35,37 +35,14 @@
 			</div>
 			<!-- card start -->
 			<?php for ($i = 0; $i < 3; $i++) : ?>
-				<div class="col rounded-lg bg-white shadow-lg">
-					<img src="https://s2.bukalapak.com/bukalapak-kontenz-production/content_attachments/27767/w-744/jumlah_push_up_3.jpg" alt="" class="rounded-lg object-cover mx-auto w-full h-48">
-					<div class="px-10 py-5">
-						<h2 class="text-lg font-semibold mb-2">Push Up</h2>
-						<p class="text-sm text-black text-opacity-50 leading-relaxed">Do 5 times push-up a day make you fresh and happy!</p>
-					</div>
-					<div class="grid grid-cols-1 px-10 pb-10 gap-y-2.5 text-blue-500">
-						<div class="col flex justify-start items-center">
-							<span class="material-icons">
-								loop
-							</span>
-							<p class="pl-5 text-sm font-semibold">5 Times</p>
+				<div class="col relative rounded-lg shadow-md bg-white">
+					<div class="relative rounded-lg bg-white h-32">
+						<img src="https://s2.bukalapak.com/bukalapak-kontenz-production/content_attachments/27767/w-744/jumlah_push_up_3.jpg" alt="" class="rounded-lg object-cover mx-auto w-full h-32">
+						<div class="absolute bottom-0 right-0 bg-black bg-opacity-50 w-full h-full rounded-lg flex items-end justify-start">
+							<h2 class="text-lg font-bold text-white mb-5 ml-5">Push Up</h2>
 						</div>
-						<div class="col flex justify-start items-center">
-							<span class="material-icons">
-								place
-							</span>
-							<p class="pl-5 text-sm font-semibold">Indoor / outdoor</p>
-						</div>
-						<div class="col flex justify-start items-center">
-							<span class="material-icons">
-								accessibility
-							</span>
-							<p class="pl-5 text-sm font-semibold">Medium</p>
-						</div>
-						<div class="col flex justify-start items-center mt-5">
-
-							<a href="/workouts/push-up" class="w-full bg-blue-500 text-white font-semibold text-lg rounded-lg h-14 flex justify-center items-center">
-								Start Push Up
-							</a>
-						</div>
+						<a href="/workouts/push-up" class="absolute top-0 left-0 w-full h-full bg-transparent z-20">
+						</a>
 					</div>
 				</div>
 			<?php endfor; ?>
@@ -121,7 +98,7 @@
 		<div class="col bg-white shadow-md rounded-lg p-5">
 			<div class="flex justify-start items-center">
 				<img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Wayfarers&hairColor=Red&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Heather&eyeType=Close&eyebrowType=Default&mouthType=Default&skinColor=Brown' class="w-14 h-14 object-cover rounded-full" />
-				<p class="text-sm font-semibold pl-5">Muhammad Fikrun Amin</p>
+				<p class="text-sm font-semibold pl-5"><?= ucwords(session()->get('data_user')['fullname']); ?></p>
 			</div>
 		</div>
 		<div class="col bg-white shadow-md rounded-lg p-5">
