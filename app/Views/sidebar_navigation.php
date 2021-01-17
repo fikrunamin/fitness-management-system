@@ -3,7 +3,7 @@
         <div>
             <h6 class="font-bold text-xl">Web Project</h6>
         </div>
-        <div class=" absolute right-0 toggle-menu" onclick="toggle_menu(this)">
+        <div class="absolute right-0 toggle-menu" onclick="toggle_menu(this)">
             <button class=" bg-blue-500 w-10 h-10 flex justify-center items-center rounded-l-lg focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 text-white">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />

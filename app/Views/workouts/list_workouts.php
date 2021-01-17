@@ -43,7 +43,7 @@
         </div>
     </div>
 </div>
-<div class="col hidden">
+<div class="col">
     <div class="w-full h-full flex items-end">
         <a href="/workouts/add" class="bg-blue-500 h-10 px-5 flex items-center justify-center text-white rounded-lg text-sm">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 mr-3">

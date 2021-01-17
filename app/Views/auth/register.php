@@ -18,6 +18,7 @@
 
     </div>
     <form method="post" action="">
+        <?= $validation->listErrors(); ?>
         <div class="input-group">
             <label>Full name</label>
             <input type="text" name="fullname" value="">
@@ -38,7 +39,7 @@
             <input type="date" id="birthdate" name="birthdate" required>
         </div>
         <div class="input-group">
-            <label>Workout Time</label>
+            <label>Preferred Workout Time</label>
             <select name="workout_time" id="workout_time" style="width: 100%; height: 50px; border-radius: 5px;" required>
                 <option value="morning">Morning</option>
                 <option value="afternoon">Afternoon</option>
@@ -85,6 +86,7 @@
             <p>Created by <b>Group 11</b></p>
         </center>
     </div>
+
 </body>
 
 </html>

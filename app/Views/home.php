@@ -29,7 +29,7 @@
 </div>
 <div class="col-span-2 xl:col-span-3 grid grid-cols-1 gap-y-10">
 	<div class="col">
-		<div class="grid grid-cols-2 xl:grid-cols-3 gap-5">
+		<div class="grid grid-cols-2 2xl:grid-cols-3 gap-5">
 			<div class="col-span-full">
 				<h2 class="font-bold text-2xl">Today's Workouts</h2>
 			</div>
@@ -94,7 +94,7 @@
 	</div>
 </div>
 <div class="col">
-	<div class="grid grid-cols-1 pl-10 gap-y-5">
+	<div class="grid grid-cols-1 pl-5 gap-y-5">
 		<div class="col bg-white shadow-md rounded-lg p-5">
 			<div class="flex justify-start items-center">
 				<img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Wayfarers&hairColor=Red&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Heather&eyeType=Close&eyebrowType=Default&mouthType=Default&skinColor=Brown' class="w-14 h-14 object-cover rounded-full" />

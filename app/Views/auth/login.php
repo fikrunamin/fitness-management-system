@@ -62,6 +62,16 @@
                 <p>Created by <b>Group 11</b></p>
             </center>
         </div>
+        <?php if (session()->getFlashData('msg')) : ?>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+            <script>
+                Swal.fire(
+                    'Error',
+                    '<?= session()->getFlashData('msg'); ?>',
+                    'error'
+                )
+            </script>
+        <?php endif; ?>
 </body>
 
 </html>

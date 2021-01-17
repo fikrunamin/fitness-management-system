@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AuthorizedUser;
 use App\Models\User;
+use Config\Services;
 
 class Auth extends BaseController
 {
@@ -48,7 +49,25 @@ class Auth extends BaseController
     }
     public function register()
     {
+        session();
+        
         if ($this->request->getMethod() == 'post') {
+
+            if (!$this->validate([
+                'fullname' => 'required',
+                'occupation' => 'required',
+                'gender' => 'required',
+                'birthdate' => 'required',
+                'workout_time' => 'required',
+                'email' => 'required|valid_email|is_unique[authorized_users.email]',
+                'password' => 'required|greater_than_equal_to[6]',
+                'confirm_password' => 'required|matches[password]',
+            ])) {
+                $validation = \Config\Services::validation();
+
+                return redirect()->to('/auth/register')->withInput()->with('validation', $validation);
+            }
+
             $data = [
                 'fullname' => $this->request->getVar('fullname'),
                 'occupation' => $this->request->getVar('occupation'),
@@ -78,7 +97,8 @@ class Auth extends BaseController
         }
 
         $data = [
-            'title' => 'Create Account'
+            'title' => 'Create Account',
+            'validation' => Services::validation()
         ];
         echo view('auth/register', $data);
     }
