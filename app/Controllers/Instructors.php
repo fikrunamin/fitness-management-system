@@ -8,10 +8,11 @@ use App\Models\Workouts;
 
 class Instructors extends BaseController
 {
-    public function index($name){
-        // if($name != ""){
-        //     return view("bio/$name/index");
-        // }
+    public function index($name = "")
+    {
+        if ($name != "") {
+            return view("bio/$name/index");
+        }
 
         $data = [
             'title' => 'Instructors'

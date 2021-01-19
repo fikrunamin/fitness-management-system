@@ -68,7 +68,7 @@
     <div class="col p-5">
         <h2 class="font-semibold">Other Menu</h2>
         <div class="grid grid-cols-1 gap-y-3 mt-5">
-            <div class="font-semibold col rounded-lg h-14 px-5 flex items-center text-gray-700 cursor-pointer" onclick="open_submenu(this)">
+            <!-- <div class="font-semibold col rounded-lg h-14 px-5 flex items-center text-gray-700 cursor-pointer" onclick="open_submenu(this)">
                 <h2 class="w-full">My Profile</h2>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-blue-500 w-6 h-6">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -80,13 +80,13 @@
                         Edit My Profile
                     </div>
                     <div class="col rounded-lg h-10 hover:bg-blue-500 hover:text-blue-100 px-5 flex items-center">
-                        Logout
+                        <a href="/auth/logout">Logout</a>
                     </div>
                 </div>
-            </div>
-            <div class="font-semibold col rounded-lg h-14 px-5 flex items-center text-gray-700">
+            </div> -->
+            <!-- <div class="font-semibold col rounded-lg h-14 px-5 flex items-center text-gray-700">
                 History
-            </div>
+            </div> -->
             <div class="relative col font-semibold rounded-lg h-14 px-5 flex items-center bg-blue-500 text-white duration-200 ">
                 <a href="/instructors" class="w-full h-full flex items-center">
                     Instuctors

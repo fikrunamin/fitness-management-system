@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="text-sm bg-blue-100 rounded-lg step-instruction overflow-hidden mt-3 box-border">
                                     <div class="p-5">
-                                        <p class="leading-relaxed text-black">Some instructuins go here.</p>
+                                        <p class="leading-relaxed text-black">Thank you for using our web application.</p>
                                         <div class="w-full mt-5">
                                             <button class="w-full bg-blue-500 text-white font-semibold text-md rounded-lg h-10 flex justify-center items-center">
                                                 Finish
@@ -82,7 +82,7 @@
         </div>
         <div class="col">
             <div class="grid grid-cols-1 gap-y-5">
-                <div class="col p-5 bg-white shadow-md rounded-lg">
+                <!-- <div class="col p-5 bg-white shadow-md rounded-lg">
                     <div class="grid grid-cols-1 gap-y-5">
                         <div class="col flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10" fill="#3b82f6">
@@ -94,7 +94,7 @@
                             <p class="text-sm font-semibold text-blue-500">5 Times</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col p-5 bg-white shadow-md rounded-lg">
                     <div class="grid grid-cols-1 gap-y-5">
                         <div class="col flex justify-center items-center">
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col p-5 bg-blue-500 shadow-md rounded-lg">
+                <!-- <div class="col p-5 bg-blue-500 shadow-md rounded-lg">
                     <div class="grid grid-cols-1 gap-y-5">
                         <div class="col flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-10 h-10 text-white">
@@ -131,7 +131,7 @@
                             <p class="text-xs font-semibold text-white text-opacity-70">Sit Up</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="col-span-full">
@@ -146,7 +146,7 @@
                         <div class="absolute bottom-0 right-0 bg-black bg-opacity-50 w-full h-full rounded-lg flex items-end justify-start">
                             <h2 class="text-lg font-bold text-white mb-5 ml-5"><?= $recommendation['name']; ?></h2>
                         </div>
-                        <a href="" class="absolute top-0 left-0 w-full h-full bg-transparent z-20">
+                        <a href="/workouts/<?= $recommendation['slug']; ?>" class="absolute top-0 left-0 w-full h-full bg-transparent z-20">
                         </a>
                     </div>
                 <?php endforeach; ?>

@@ -8,5 +8,6 @@ class CentralSeeder extends \CodeIgniter\Database\Seeder
     {
         $this->call('UsersSeeder');
         $this->call('WorkoutsSeeder');
+        $this->call('InstructorsSeeder');
     }
 }

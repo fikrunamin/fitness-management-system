@@ -67,7 +67,8 @@
                     <p class="leading-relaxed text-black">Hi, <span class="font-semibold"><?= ucwords(session()->get('data_user')['fullname']); ?></span>.</p>
                 </div>
                 <div class="text-sm bg-blue-100 rounded-lg p-5 mt-3">
-                    <p class="leading-relaxed text-black">I'm <span class="font-semibold">Muhammad Harraz bin Harun</span>. So, today I will be your instructor for this workout. Please follow the instructions carefully.</p>
+                    <?php  ?>
+                    <p class="leading-relaxed text-black">So, today you will be guided by one of our instructors for this workout. Please follow the instructions carefully.</p>
                     <div class="w-full mt-5">
                         <a href="/workouts/<?= $data[0]['slug']; ?>/start" class="w-full bg-blue-500 text-white font-semibold text-md rounded-lg h-10 flex justify-center items-center">
                             Okay, Start

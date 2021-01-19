@@ -31,16 +31,7 @@ class WorkoutHistoriesTable extends Migration
 				'constraint'     => 5,
 				'unsigned'       => true,
 			],
-			'notes' => [
-				'type'           => 'VARCHAR',
-				'constraint'     => 255,
-				'null'			 => true
-			],
 			'started_at' => [
-				'type'           => 'DATETIME',
-				'null'			 => true
-			],
-			'finished_at' => [
 				'type'           => 'DATETIME',
 				'null'			 => true
 			],
