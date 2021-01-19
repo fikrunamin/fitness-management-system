@@ -8,7 +8,11 @@ use App\Models\Workouts;
 
 class Instructors extends BaseController
 {
-    public function index(){
+    public function index($name){
+        if($name != ""){
+            
+        }
+
         $data = [
             'title' => 'Instructors'
         ];
