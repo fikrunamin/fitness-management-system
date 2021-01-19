@@ -87,6 +87,11 @@
             <div class="font-semibold col rounded-lg h-14 px-5 flex items-center text-gray-700">
                 History
             </div>
+            <div class="relative col font-semibold rounded-lg h-14 px-5 flex items-center bg-blue-500 text-white duration-200 ">
+                <a href="/instructors" class="w-full h-full flex items-center">
+                    Instuctors
+                </a>
+            </div>
         </div>
     </div>
 </div>

@@ -43,6 +43,18 @@ $routes->group('workouts', ['filter' => 'auth'], function ($routes) {
 	$routes->get('(:segment)/finish', 'Workout::finish/$1');
 });
 
+
+$routes->group('healthy-foods', ['filter' => 'auth'], function ($routes) {
+	$routes->get('', 'HealthyFood::index');
+	$routes->match(['post', 'get'], 'add', 'HealthyFood::add');
+	$routes->get('(:segment)', 'HealthyFood::detail/$1');
+	$routes->match(['post', 'get'], 'edit/(:segment)', 'HealthyFood::edit/$1');
+	$routes->match(['post'], 'delete_food', 'HealthyFood::delete_food');
+	$routes->get('(:segment)', 'Workout::index/$1');
+	$routes->get('(:segment)', 'HealthyFood::detail/$1');
+	$routes->get('(:segment)/finish', 'Workout::finish/$1');
+});
+
 $routes->group('auth', ['filter' => 'guest'], function ($routes) {
 	$routes->match(['get', 'post'], 'register', 'Auth::register', ['as' => 'register']);
 	$routes->match(['get', 'post'], 'login', 'Auth::login', ['as' => 'login']);

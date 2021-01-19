@@ -147,21 +147,11 @@ class Workout extends BaseController
         if ($this->request->getMethod() == "post") {
             $id_workout = $this->request->getVar('id_workout');
 
-            $img_file = $this->request->getVar('image');
-
-            dd($img_file);
-
-            // $dir = "assets/workouts/" . $slug;
-            // $new_name = $slug . '.' . $img_file->getExtension();
-            // $img_file->move($dir, $new_name);
-            // $name = $dir . '/' . $new_name;
-
             $data = [
                 "name" => $this->request->getVar('title'),
                 "slug" => url_title($this->request->getVar('title')),
                 "description" => $this->request->getVar('description'),
                 "workout_time" => "Morning",
-                "image" => $this->request->getVar('image') ?? '',
                 "iteration" => $this->request->getVar('iteration'),
             ];
             $this->db->table('workouts')->where('id', $id_workout)->update($data);
