@@ -63,7 +63,24 @@
             <div class="col relative rounded-lg bg-white shadow-lg">
                 <img src="https://s2.bukalapak.com/bukalapak-kontenz-production/content_attachments/27767/w-744/jumlah_push_up_3.jpg" alt="" class="rounded-lg object-cover mx-auto w-full h-32">
                 <div class="absolute bottom-0 right-0 bg-black bg-opacity-50 w-full h-full rounded-lg flex items-end justify-start">
-                    <h2 class="text-lg font-bold text-white mb-5 ml-5"><?= $data['name']; ?></h2>
+                    <div class="pb-5 px-5 text-white flex justify-between w-full">
+                        <div>
+                            <h2 class="text-lg font-bold"><?= $data['name']; ?></h2>
+                        </div>
+                        <div class="flex justify-center space-x-3">
+                            <a href="/workouts/edit/<?= $data['id']; ?>" class="z-30 hover:text-blue-500 duration-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                    <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <a href="javascript:;" class="z-30 hover:text-red-500 duration-200" onclick="remove_workout(this, <?= $data['id']; ?>)">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <a href="/workouts/<?= $data['slug']; ?>" class="absolute top-0 left-0 w-full h-full bg-transparent z-20">
                 </a>
@@ -76,6 +93,15 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('scripts'); ?>
+<?php if (session()->getFlashData('success')) : ?>
+    <script>
+        swal({
+            icon: "success",
+            title: "Success",
+            text: "<?= session()->getFlashData('success'); ?>"
+        });
+    </script>
+<?php endif; ?>
 <script>
     let isRunning = false
 
@@ -115,10 +141,28 @@
 
                     data.forEach((item, i) => {
                         setTimeout(() => {
-                                let $new_item = $(`<div class="col relative rounded-lg bg-white shadow-lg hidden">
+                                let $new_item = $(`
+                                    <div class="col relative rounded-lg bg-white shadow-lg hidden">
                                         <img src="https://s2.bukalapak.com/bukalapak-kontenz-production/content_attachments/27767/w-744/jumlah_push_up_3.jpg" alt="" class="rounded-lg object-cover mx-auto w-full h-32">
                                         <div class="absolute bottom-0 right-0 bg-black bg-opacity-50 w-full h-full rounded-lg flex items-end justify-start">
-                                            <h2 class="text-lg font-bold text-white mb-5 ml-5">${item.name}</h2>
+                                            <div class="pb-5 px-5 text-white flex justify-between w-full">
+                                                <div>
+                                                    <h2 class="text-lg font-bold">${item.name}</h2>
+                                                </div>
+                                                <div class="flex justify-center space-x-3">
+                                                    <a href="/workouts/edit/${item.id}" class="z-30 hover:text-blue-500 duration-200">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                                            <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                                            <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                                        </svg>
+                                                    </a>
+                                                    <a href="javascript:;" class="z-30 hover:text-red-500 duration-200" onclick="remove_workout(this, ${item.id})">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6">
+                                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
                                         <a href="/workouts/${item.slug}" class="absolute top-0 left-0 w-full h-full bg-transparent z-20">
                                         </a>
@@ -206,6 +250,46 @@
         $(".category-item").filter(function() {
             $(this).toggle($(this).find('p').text().toLowerCase().indexOf(keyword) > -1)
         });
+    }
+
+    function remove_workout(e, index) {
+        swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this, and user histories data will be affected.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    let id =
+                        $.ajax({
+                            type: "post",
+                            data: {
+                                id: index
+                            },
+                            url: "/workouts/delete_workout",
+                            success: (data) => {
+                                data = JSON.parse(data)
+                                console.log(data)
+                                if (data == 'success') {
+                                    swal("The workout has been deleted!", {
+                                        icon: "success",
+                                    });
+                                    $(e).closest('.col').hide('drop', {
+                                        direction: 'down'
+                                    }, 200, () => {
+                                        $(this).remove()
+                                    })
+                                } else {
+                                    swal("Failed delete data!", {
+                                        icon: "error",
+                                    });
+                                }
+                            }
+                        })
+                }
+            });
     }
 </script>
 <?= $this->endSection(); ?>

@@ -18,7 +18,7 @@
                 <?php if (service('uri')->getSegment(1) == '') : ?>
                     bg-blue-100 text-blue-500 
                 <?php else : ?>
-                    hover:bg-blue-100 hover:text-blue-500 text-gray-700 
+                    hover:bg-blue-100 hover:text-blue-500 text-gray-700 duration-200 
                 <?php endif; ?>
                     ">
                 <a href="/" class="w-full h-full flex items-center">
@@ -35,7 +35,7 @@
                         <?php if (service('uri')->getSegment(1) == 'workouts') : ?>
                             bg-blue-100 text-blue-500 
                         <?php else : ?>
-                            hover:bg-blue-100 hover:text-blue-500 text-gray-700 
+                            hover:bg-blue-100 hover:text-blue-500 text-gray-700 duration-200 
                         <?php endif; ?>
                         ">
                         <a href="/workouts" class="w-full h-full flex items-center">
@@ -52,7 +52,7 @@
                 <?php if (service('uri')->getSegment(1) == 'healthy-foods') : ?>
                     bg-blue-100 text-blue-500 
                 <?php else : ?>
-                    hover:bg-blue-100 hover:text-blue-500 text-gray-700 
+                    hover:bg-blue-100 hover:text-blue-500 text-gray-700 duration-200 
                 <?php endif; ?>
             ">
                 <a href="/healthy-foods" class="w-full h-full flex items-center">

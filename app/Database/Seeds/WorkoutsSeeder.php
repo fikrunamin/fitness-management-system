@@ -24,10 +24,9 @@ class WorkoutsSeeder extends \CodeIgniter\Database\Seeder
             $data = [
                 'name' => $workouts[$i],
                 'slug' => url_title($workouts[$i], '-', true),
-                'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, veritatis!',
+                'description' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, veritatis!</p>',
                 'image' => "workout/{$workouts[$i]}/{$workouts[$i]}.jpg",
                 'workout_time' => "Morning",
-                'place' => 'Indoor / Outdoor',
                 'iteration' => '5'
             ];
 

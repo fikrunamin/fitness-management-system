@@ -36,6 +36,8 @@ $routes->group('workouts', ['filter' => 'auth'], function ($routes) {
 	$routes->get('', 'Workout::index');
 	$routes->match(['post', 'get'], 'search', 'Workout::search');
 	$routes->match(['post', 'get'], 'add', 'Workout::add');
+	$routes->match(['post', 'get'], 'edit/(:segment)', 'Workout::edit/$1');
+	$routes->match(['post'], 'delete_workout', 'Workout::delete_workout');
 	$routes->get('(:segment)', 'Workout::index/$1');
 	$routes->get('(:segment)/start', 'Workout::start/$1');
 	$routes->get('(:segment)/finish', 'Workout::finish/$1');

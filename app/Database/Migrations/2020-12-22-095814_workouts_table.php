@@ -29,12 +29,9 @@ class WorkoutsTable extends Migration
 			],
 			'image' => [
 				'type'           => 'TEXT',
+				'null'			 => true
 			],
 			'workout_time' => [
-				'type'           => 'VARCHAR',
-				'constraint'     => 255,
-			],
-			'place' => [
 				'type'           => 'VARCHAR',
 				'constraint'     => 255,
 			],

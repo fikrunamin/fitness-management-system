@@ -30,6 +30,7 @@ class WorkoutStepsTable extends Migration
 			],
 			'image' => [
 				'type'           => 'TEXT',
+				'null'       => true,
 			],
 		]);
 

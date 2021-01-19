@@ -6,6 +6,7 @@ class CentralSeeder extends \CodeIgniter\Database\Seeder
 {
     public function run()
     {
+        $this->call('UsersSeeder');
         $this->call('WorkoutsSeeder');
     }
 }

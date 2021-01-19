@@ -25,12 +25,6 @@
             </div>
             <div class="col flex justify-start items-center">
                 <span class="material-icons">
-                    place
-                </span>
-                <p class="pl-5 text-sm font-semibold"><?= $data[0]['place']; ?></p>
-            </div>
-            <div class="col flex justify-start items-center">
-                <span class="material-icons">
                     brightness_4
                 </span>
                 <p class="pl-5 text-sm font-semibold"><?= $data[0]['workout_time']; ?></p>
