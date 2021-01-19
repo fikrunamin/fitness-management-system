@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<style>
+		#row-of-audios div {
+			
+		}
+		
+		#row-of-audios p {
+			color:white;
+		}
+		
+		h1 {
+			color:white;
+		}
+	</style>
+	<style>
+#div1 {
+  width: 350px;
+  height: 50px;
+  padding: 10px;
+  
+  margin-right:90px;
+  border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+  document.getElementById("1").innerHTML="Enjoy the music";
+  
+}
+</script>
+	 
+</head>
+<body id="body-element">
+	<header>
+	
+		<div class="main">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="WATCHVIDEO.html">Watch Video</a></li>
+				<li class="active"><a href="LISTENAUDIO.html">Favourite Songs</a></li>
+				<li><a href="#" onClick="changebackground()">Change Me</a></li>
+			</ul>
+		</div>
+	</header>
+<canvas id="myCanvas" width="300" height="80" align="center" style="margin-left:300px;" ></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      context.font = '30pt Calibri';
+      context.fillStyle = 'green';
+      context.fillText('Enjoy the music', 10, 60);
+    </script>
+        <div class="row-of-audios" style="width:90%;height:50vh;padding-top:150px;">
+			<div style="float:left;width:30%;height:inherit;">
+				<h1>English Songs</h1>
+				<audio controls autoplay>
+					<source src="ImYours.ogg" type="audio/ogg" />
+					<source src="ImYours.mp3" type="audio/mp3" />
+					Your browser does not support the <audio> element.</audio>
+				</audio>
+				<p style="color:#ADFF2F;"><b>Jason Mraz - I'm Yours</b></p>
+			</div>
+			<div style="width:400px;height:inherit;float:left;">
+				<h1>Malay Songs</h1>
+				<audio controls autoplay>
+					<source src="DiMatamu.ogg" type="audio/ogg" />
+					<source src="DiMatamu.mp3" type="audio/mp3" />
+					Your browser does not support the <audio> element.</audio>
+				</audio>
+				<p style="color:#ADFF2F;"><b>Sufian Suhaimi - Di Matamu</b></p>
+			</div>
+			<div style="color:white;margin-left:800px;">
+		<p id="1">Drag the people listening music image:</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<img id="drag1" src="logogo.png" draggable="true" ondragstart="drag(event)" width="200" height="50" align="center:">
+</div>
+			
+		</div>
+		<script>
+		function changebackground(){
+			var body_element = document.getElementById("body-element");
+			body_element.style.backgroundImage = 'url("5.jpg")';
+		}
+	</script>
+		
+</body>
+</html>

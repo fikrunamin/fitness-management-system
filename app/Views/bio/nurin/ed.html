@@ -1,0 +1,160 @@
+<html>
+<head>
+<title> Nurin's Biography </title>
+
+<script>
+
+//Browsing a website using JavaScript
+function Site(val)
+{
+window.location.href = val;
+}
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+ var pattern= new Image();
+
+ function animate(){
+ pattern.src = 'pattern.jpg';
+ setInterval(drawShape, 100);
+ }
+
+ function drawShape(){
+ // get the canvas element using the DOM
+ var canvas = document.getElementById('mycanvas');
+
+ // Make sure we don't execute when canvas isn't supported
+ if (canvas.getContext){
+
+ // use getContext to use the canvas for drawing
+ var ctx = canvas.getContext('2d');
+
+ ctx.fillStyle = 'rgba(0,0,0,0.4)';
+ ctx.strokeStyle = 'rgba(0,153,255,0.4)';
+ ctx.save();
+ ctx.translate(150,150);
+
+ var time = new Date();
+ ctx.rotate( ((2*Math.PI)/6)*time.getSeconds() + (
+(2*Math.PI)/6000)*time.getMilliseconds() );
+ ctx.translate(0,28.5);
+ ctx.drawImage(pattern,-3.5,-3.5);
+ ctx.restore();
+ }
+
+ else {
+ alert('You need Safari or Firefox 1.5+ to see this demo.');
+ }
+ }
+
+
+</script>
+
+</head>
+
+<body onload="animate();">
+ <canvas id="mycanvas" width="400" height="200"></canvas>
+
+<style type="text/css">
+body {background-image: url('background.jpg'); text-align:center; font-family: courier; background-size: 100% 100%}
+img  {border:5px solid #555;}
+h1   {text-align:center; height:20;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+#boxA, #boxB {
+ float:left;padding:10px;margin:10px; -moz-user-select:none;
+}
+#boxA { background-color: #6633FF; width:75px; height:75px; }
+#boxB { background-color: #FF6699; width:150px; height:150px; }
+#div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 5px solid #aaaaaa;
+}
+</style>
+
+<div>
+<ul>
+<li style="border-right: 1px solid #bbb"><a href="mybio.html">Home</a></li>
+<li style="border-right: 1px solid #bbb"><a href="background.html">About Me</a></li>
+  <li style="border-right: 1px solid #bbb"><a href="ed.html">Education</a></li>
+  <li style="float:right"><a class="active" href="comment.html">Comment</a></li>
+	</ul>	
+
+</div>
+
+<h1>
+MY EDUCATION
+</h1><div id="svg">
+<svg id="svgelem" height="100" xmlns="http://www.w3.org/2000/svg">
+<line x1="5" y1="10" x2="5000" y2="20" style="stroke: red; stroke-width:2"/>
+ </svg></div>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<br>
+<h2> Drag the image into the box <h2>
+<img id="drag1" src="ed2.gif" alt="edgif" draggable="true" ondragstart="drag(event)" width="200" height="69"/></div><br></br>
+To know more, select a site below to browse: <hr />
+<form action = "">
+<select name = " SiteSelector" size = "1"
+onChange="Site(this.value)">
+<option value = "http://www.utem.edu.my"> UTeM </option>
+<option value = "https://skkerandangbesut.blogspot.com/"> Sk Kerandang </option>
+<option value = "https://www.facebook.com/smktmbesut"> Smk Tengku Mahmud </option>
+</select>
+</form>
+<div id="bg"; style="font-weight:bold; background-color: #ccc;">
+
+SK KERANDANG BESUT, TERENGGANU (2007-2010) <br></br>
+SMK TENGKU MAHMUD, BESUT, TERENGGANU (2011-2015) <br></br>
+UNIVERSITI TEKNIKAL MALAYSIA MELAKA (2016-2019) <br></br>
+UNIVERSITI TEKNIKAL MALAYSIA MELAKA (2019-2021)<br></br>
+
+</div></br>
+
+
+
+
+</body>
+</html>

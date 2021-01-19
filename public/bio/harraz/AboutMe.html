@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+</head>
+<body id="body-element">
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="logo.jpg">
+			</div>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="active"><a href="AboutMe.html">About Me</a></li>
+				<li><a href="Contact.html">Information</a></li>
+				<li><a href="#" onClick="changebackground()">Change Me</a></li>
+				
+			</ul>
+		</div>
+		<div class="about me" style="width:100%;float:left;">
+				<svg height="130" width="500" style="margin-left:650px;">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="18" font-family="Verdana" x="20" y="86">Harraz's Biography</text>
+  Sorry, your browser does not support inline SVG.
+</svg>
+	
+			<div align="center" style="text-align:center;margin:0 auto;" class="content-image">
+				<img src="image.jpg" alt="image" width="250px"height="300px">
+			</div>
+			      <div style="color:white;width:60%;margin:0 auto;"> <p><b>My name is Muhammad Harraz bin Harun and my friend called me "raz". I was born in Selangor on 28<sup>th</sup> july 1999. My favorite colour is blue. I choose blue because this colour looks calm like a blue ocean. I have 5 siblings and I am the fourth. I like to travel and have traveled to many countries like Hong Kong, Australia, Singapore and Indonesia.</p></b>
+						            <br><br> <p><b> From 2018 until now, I was given the opportunity and sustenance to continue my studies at the degree level in the field of Computer Science which is in course Artificial Intelligent(AI). For this year (2020), Im a 3rd year student and left only 2 sem for me to graduate.I hope Allah will make everything easier for this sem and another 2 sem. </p></b>
+									<button style="color:white;background-color: #0000FF;" onclick="myFunction()">click me</button>
+									
+									<script>
+									function myFunction() {
+									var myCollection = document.getElementsByTagName("p");
+									var i;
+									for (i = 0; i < myCollection.length; i++) {
+									myCollection[i].style.color = "blue";
+											}
+										}
+									</script>
+				  </div>
+		
+		</div>
+		
+	</header>
+	<script>
+		function changebackground(){
+			var body_element = document.getElementById("body-element");
+			body_element.style.backgroundImage = 'url("5.jpg")';
+		}
+	</script>
+</body>
+</html>
+						

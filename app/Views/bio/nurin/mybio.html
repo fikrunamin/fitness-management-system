@@ -1,0 +1,107 @@
+<html>
+<head>
+<title> Nurin's Biography </title>
+</head>
+
+<body>
+
+	
+<style type="text/css">
+body {background-image: url('background.jpg'); text-align:center; font-family: courier; background-size: 100% 100%}
+h1   {color: blue;}
+p {background-color:yellow; border:1px solid black;
+color:black; font-size:150%; font-weight:bold; padding:0.5em;}
+img  {border:5px solid #555;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+#test2 {
+ width: 100px;
+ height:100px;
+ margin: 0px auto;
+ }
+</style>
+
+<body id="test" onload="drawShape();">
+ <canvas id="mycanvas"></canvas>
+<script type="text/javascript">
+ function drawShape(){
+
+ // get the canvas element using the DOM
+ var canvas = document.getElementById('mycanvas');
+
+ // Make sure we don't execute when canvas isn't supported
+ if (canvas.getContext){
+
+ // use getContext to use the canvas for drawing
+ var ctx = canvas.getContext('2d');
+ ctx.font = 'Bold 30px Sans-Serif';
+ ctx.strokeText('Hello World!', 50, 100);
+ }
+ else {
+ alert('You need Safari or Firefox 1.5+ to see this demo.');
+ }
+ }
+
+function showResult()
+ {
+ x = document.forms["myform"]["newinput"].value;
+ document.forms["myform"]["result"].value=x;
+ }
+
+</script>
+
+
+<div>
+<ul>
+<li style="border-right: 1px solid #bbb"><a href="mybio.html">Home</a></li>
+<li style="border-right: 1px solid #bbb"><a href="background.html">About Me</a></li>
+  <li style="border-right: 1px solid #bbb"><a href="ed.html">Education</a></li>
+  <li style="float:right"><a class="active" href="comment.html">Comment</a></li>
+	</ul>	
+
+</div>
+<br>
+<div id="marq">
+<marquee width="50%" scrollamount= "15" >
+		  <img src= "img2.jpg" height="300px" ></img>
+		  <img src= "img3.jpg" height="300px" ></img>
+		  <img src= "img4.jpg" height="300px"></img>
+		  </marquee>
+
+  </div></br>
+<div>
+<audio controls autoplay>
+ <source src="audio.mp3" type="audio/ogg" />
+ Your browser does not support the <audio> element.
+ </audio></div>
+
+</body>
+</html>

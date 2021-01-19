@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<style>
+		td {
+		border: 1px solid white;
+        padding: 8px;
+		}
+	</style>
+	<script>
+function validateForm() {
+  var x = document.forms["myEmail"]["femail"].value;
+  if (x == "") {
+    alert("Put your Email please !");
+    return false;
+  }
+  else {
+	alert(" Thankyou for send your email")
+	return true;
+  }
+}
+</script>
+
+</head>
+<body id="body-element">
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="logo.jpg">
+			</div>
+			<ul>
+				<li ><a href="index.html">Home</a></li>
+				<li><a href="AboutMe.html">About Me</a></li>
+				<li class="active"><a href="Contact.html">Information</a></li>
+				<li><a href="#" onClick="changebackground()">Change Me</a></li>
+			</ul>
+			
+		
+			
+		</div>
+		<div class="Information" style="width:100%;float:left;">
+<svg height="130" width="500" style="margin-left:650px;">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="28" font-family="Verdana" x="20" y="86">Information</text>
+  Sorry, your browser does not support inline SVG.
+</svg>
+				<br></br><table style="text-align:center;margin: auto;width:65%;color:white;">
+  
+								<tr>
+									<td>FULL NAME</td>
+									<td>MUHAMMAD HARRAZ BIN HARUN</td>
+								</tr>
+								<tr>
+									<td>EMAIL</td>
+									<td>B031810426@student.utem.edu.my</td>
+								</tr>
+								<tr>
+									<td>MATRIC NUMBER</td>
+									<td>B031810426</td>
+								</tr>
+								<tr>
+									<td>FACULTY</td>
+									<td>FACULTY OF INFORMATION AND COMMUNICATIONS TECHNOLOGY</td>
+								</tr>
+						</table>
+						<div style="text-align:center;margin: auto;width:65%;color:white;">
+						<br></br><label style="color:white;">This is UTeM link below, You can visit it &#128512; </label>
+						<!-- for option button using javascript -->
+			<script type = "text/JavaScript">
+			//Browsing a website using JavaScript
+			function Site(val)
+			{
+			window.location.href = val;
+			}
+			</script>
+			
+			<form action = "">
+			<select name = " SiteSelector" size = "1"
+			onChange="Site(this.value)">
+			<option value = "http://www.utem.edu.my"> UTeM Official Website  </option>
+			<option value = "http://ftmk.utem.edu.my"> FTMK</option>
+			<option value = "http://ulearn.utem.edu.my"> ULearn </option>
+			</select>
+			</form></div>
+
+						
+
+	<canvas id="myCanvas" width="300" height="80" align="center" style="margin-left:650px;" ></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      context.font = '20pt Calibri';
+      context.fillStyle = 'white';
+      context.fillText('You have any question?', 10, 60);
+    </script>
+                    <p align="center" style="text-align:center;margin: auto;width:65%;color:white;">Share your email or note! I reply later. &#128512; &#128151;</p>
+                    <div style="text-align: center;">
+                        <form name="myEmail" action="Contact.html" onsubmit="return validateForm()" method="post">
+                            <p align="center" style="text-align:center;margin: auto;width:65%;color:white;">Email:</p>
+                            <input style="margin:0 auto;" type="email" name="femail" placeholder="Drop your email here"/><br>
+							<input type="submit" value="Send">
+                        </form>
+						<form  action="">
+							<p align="center" style="text-align:center;margin: auto;width:65%;color:white;">Notes:</p>
+							<input type="textarea"  name="fnote" placeholder="Put your message here.." style="margin:0 auto;"/>
+							<input type="submit" value="send">
+							
+						</form>
+						<form action="">
+							<p align="center" style="text-align:center;margin: auto;width:65%;color:white;">Instagram:</p>
+							<input id="name"  name="email" placeholder="Put your username Instagram..." style="margin:0 auto;"/>
+							<input type="submit" value="send">
+						</form>
+					</div>
+					
+						
+			
+	</header>
+	<script>
+		function changebackground(){
+			var body_element = document.getElementById("body-element");
+			body_element.style.backgroundImage = 'url("5.jpg")';
+		}
+	</script>
+		
+</body>
+</html>
+						

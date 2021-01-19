@@ -61,9 +61,10 @@
         <!-- card start -->
         <?php foreach ($datas as $data) : ?>
             <div class="col relative rounded-lg bg-white shadow-lg">
-            <?php if($data['image'] != '') ?>
-                <img src="/<?= $data['image']; ?>" alt="" class="rounded-lg object-cover mx-auto w-full h-32">
-                <?php else: ?>
+                <?php if ($data['image'] != '') : ?>
+                    <img src="/<?= $data['image']; ?>" alt="" class="rounded-lg object-cover mx-auto w-full h-32">
+                <?php else : ?>
+                    <img src="https://s2.bukalapak.com/bukalapak-kontenz-production/content_attachments/27767/w-744/jumlah_push_up_3.jpg" alt="" class="rounded-lg object-cover mx-auto w-full h-32">
                 <?php endif; ?>
                 <div class="absolute bottom-0 right-0 bg-black bg-opacity-50 w-full h-full rounded-lg flex items-end justify-start">
                     <div class="pb-5 px-5 text-white flex justify-between w-full">

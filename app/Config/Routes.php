@@ -55,6 +55,8 @@ $routes->group('healthy-foods', ['filter' => 'auth'], function ($routes) {
 	$routes->get('(:segment)/finish', 'Workout::finish/$1');
 });
 
+$routes->get('instructors/(:segment)', 'Instructors::index/$1');
+
 $routes->group('auth', ['filter' => 'guest'], function ($routes) {
 	$routes->match(['get', 'post'], 'register', 'Auth::register', ['as' => 'register']);
 	$routes->match(['get', 'post'], 'login', 'Auth::login', ['as' => 'login']);

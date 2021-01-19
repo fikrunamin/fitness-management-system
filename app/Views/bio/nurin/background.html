@@ -1,0 +1,115 @@
+<html>
+<head>
+<title> Nurin's Biography </title>
+<script type="text/javascript">
+ function drawShape(){
+
+ // get the canvas element using the DOM
+ var canvas = document.getElementById('mycanvas');
+
+ // Make sure we don't execute when canvas isn't supported
+ if (canvas.getContext){
+
+ // use getContext to use the canvas for drawing
+ var ctx = canvas.getContext('2d');
+ ctx.translate(100,100);
+
+ for (i=1; i<7; i++){
+ ctx.save();
+ ctx.fillStyle = 'rgb('+(51*i)+','+(200-51*i)+',0)';
+
+ for (j=0; j < i*6; j++){
+ ctx.rotate(Math.PI*2/(i*6));
+ ctx.beginPath();
+
+ ctx.arc(0,i*12.5,5,0,Math.PI*2,true);
+ ctx.fill();
+ }
+ ctx.restore();
+ }
+ }
+ else {
+ alert('You need Safari or Firefox 1.5+ to see this demo.');
+ }
+ }
+ </script>
+</head>
+
+<body id="text" onload="drawShape();">
+
+<style type="text/css">
+body {background-image: url('background.jpg'); font-family: courier; background-size: 100% 100%}
+img  {border:5px solid #555;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+#test {
+ width: 100px;
+ height:100px;
+ margin: 0px auto;
+ }
+</style>
+
+<div>
+<ul>
+<li style="border-right: 1px solid #bbb"><a href="mybio.html">Home</a></li>
+<li style="border-right: 1px solid #bbb"><a href="background.html">About Me</a></li>
+  <li style="border-right: 1px solid #bbb"><a href="ed.html">Education</a></li>
+  <li style="float:right"><a class="active" href="comment.html">Comment</a></li>
+	</ul>	
+
+</div>
+
+<div align="center">
+<svg width="100px" height="50px" viewBox="0 0 100 50"
+  xmlns="http://www.w3.org/2000/svg">
+
+<polyline
+  points="5 20, 20 20, 25 10, 35 30, 45 10,
+    55 30, 65 10, 75 30, 80 20, 95 20"
+  style="stroke: black; stroke-width: 3; fill: none;"/>
+</svg>
+<h1>  WAN NURIN JAZMINA BINTI WAN OMAR </h1>
+
+<img src="nurin.jpg" alt="My Photo" width="200" height="200"/>
+<canvas id="mycanvas" width="200" height="200"></canvas>
+<h2> Currently studying in UteM, 
+pursuing Bachelor of Science Computer(Computer Security) </h2>
+<div id="bg"; style="font-weight:bold; background-color: #ccc;">
+AGE    : 22 years old <br></br>
+DOB    : 10th March 1998 <br></br>
+EMAIL  : nurinjazmina98@gmail.com <br></br>
+ADDRESS: Besut, Terengganu<br></br>
+HOBBIES: Reading, surfing internet, watching movies/drama<br></br>
+AMBITION: Lecturer <br></br>
+
+</div></br>
+
+</body>
+</html>

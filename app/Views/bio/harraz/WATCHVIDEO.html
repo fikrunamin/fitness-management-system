@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+</head>
+<body id="body-element">
+	<header>
+		<div class="main">
+			
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="active"><a href="WATCHVIDEO.html">Watch Video</a></li>
+				<li><a href="LISTENAUDIO.html">Favourite Music</a></li>
+				<li><a href="#" onClick="changebackground()">Change Me</a></li>
+			</ul>
+		</div>
+	</header>
+		<canvas id="myCanvas" width="300" height="80" align="center" style="margin-left:600px;" ></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      context.font = '20pt Calibri';
+      context.fillStyle = 'green';
+      context.fillText('Beautiful UTeM', 10, 60);
+    </script>
+			<div class="video" style="width:100%;float:left;text-align:center;" align="center">
+				<video width="400" height="200"  controls autoplay>
+					<source src="UTeM.ogg" type="video/ogg" />
+					<source src="UTeM.webm" type="video/webm" />
+					Your browser does not support the <video> element.</video>
+				</video>
+					<div style="color:white;width:50%;margin:0 auto;"><p><b> This video shows the entire area in Universiti Teknikal Melaka, Malaysia and UTeM is where I gain more my knowledge in the field of Artificial Intelligence. &#128512;</p></b>
+                                                                        <br></br><svg height="30" width="200" style="margin-left:100px;" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <a xlink:href="https://www.w3schools.com/graphics/" target="_blank">
+    <text x="0" y="15" fill="blue"> Enjoy your day!  &#128151</text>
+  </a>
+  Sorry, your browser does not support inline SVG.
+</svg>					
+					</div>
+			</div>
+			<script>
+		function changebackground(){
+			var body_element = document.getElementById("body-element");
+			body_element.style.backgroundImage = 'url("5.jpg")';
+		}
+		</script>
+	</body>
+</html>
